@@ -1,5 +1,5 @@
 # Docker image for developing with Visual Studio
-FROM microblinkdev/clang-devenv:13.0.0
+FROM microblinkdev/clang-devenv:13.0.1
 
 LABEL description="Container for use with Visual Studio"
 
@@ -11,10 +11,10 @@ RUN yum -y install openssh-server rsync gdb procps psmisc
 
 RUN mkdir -p /var/run/sshd
 
-RUN echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config && \ 
-   ssh-keygen -A 
+RUN echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config && \
+   ssh-keygen -A
 
-# expose port 22 
+# expose port 22
 EXPOSE 22
 
 # define password for SSH access
